@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="24e5f7b8-68b4-426e-8f42-fa5b8a9d11b5" name="Changes" comment="Bug fix on AddressBookApplication">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AddressBookApplication.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/address/AddressBookApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/address/data/AddressBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/address/data/AddressBookEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/address/data/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/address/tests/AddressBookEntryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/address/tests/AddressBookTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/address/tests/MenuTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2ctsro48v4XxPzM5UNEiDwQEMbl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AddressBookApplication.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.All in AddressBookApplication.executor": "Debug",
+    "JUnit.JUnit AllTest.executor": "Run",
+    "JUnit.MenuTest.executor": "Run",
+    "JUnit.MenuTest.testPromptFirstName2.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/14157/IdeaProjects/AddressBookApplication/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\14157\IdeaProjects\AddressBookApplication\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="AddressBookApplication" />
+      <module name="AddressBookApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in AddressBookApplication" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="AddressBookApplication" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JUnit AllTest" type="JUnit" factoryName="JUnit">
+      <module name="AddressBookApplication" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AddressBookApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="address.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="address.tests" />
+      <option name="MAIN_CLASS_NAME" value="address.tests.MenuTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuTest.testPromptFirstName2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AddressBookApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="address.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="address.tests" />
+      <option name="MAIN_CLASS_NAME" value="address.tests.MenuTest" />
+      <option name="METHOD_NAME" value="testPromptFirstName2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.JUnit AllTest" />
+      <item itemvalue="JUnit.All in AddressBookApplication" />
+      <item itemvalue="JUnit.MenuTest" />
+      <item itemvalue="JUnit.MenuTest.testPromptFirstName2" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in AddressBookApplication" />
+        <item itemvalue="JUnit.MenuTest.testPromptFirstName2" />
+        <item itemvalue="JUnit.MenuTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="24e5f7b8-68b4-426e-8f42-fa5b8a9d11b5" name="Changes" comment="" />
+      <created>1708942414973</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708942414973</updated>
+      <workItem from="1708942416668" duration="2379000" />
+      <workItem from="1708994864718" duration="16230000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Bug fix on AddressBookApplication" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fix on AddressBookApplication" />
+  </component>
+</project>
