@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24e5f7b8-68b4-426e-8f42-fa5b8a9d11b5" name="Changes" comment="Bug fix on AddressBookApplication">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AddressBookApplication.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/address/AddressBookApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/address/data/AddressBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/address/data/AddressBookEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/address/data/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/address/tests/AddressBookEntryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/address/tests/AddressBookTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/address/tests/MenuTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/address/DataFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/address/AddressBookApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/address/AddressBookApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/address/data/AddressBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/address/data/AddressBook.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +22,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/main" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -59,7 +57,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -170,12 +168,32 @@
       <option name="presentableId" value="Default" />
       <updated>1708942414973</updated>
       <workItem from="1708942416668" duration="2379000" />
-      <workItem from="1708994864718" duration="16230000" />
+      <workItem from="1708994864718" duration="19512000" />
     </task>
+    <task id="LOCAL-00001" summary="Bug fix on AddressBookApplication">
+      <option name="closed" value="true" />
+      <created>1709036033334</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709036033335</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Bug fix on AddressBookApplication" />

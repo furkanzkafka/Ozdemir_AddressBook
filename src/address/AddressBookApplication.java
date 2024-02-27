@@ -10,56 +10,49 @@ public class AddressBookApplication {
      * @param args command line arguments
      */
     public static void main(String [] args) {
-        AddressBook book = new AddressBook();
+        AddressBook address = new AddressBook();
+        AddressBookEntry entry = new AddressBookEntry();
+
         Scanner scanner = new Scanner(System.in);
+        String selection;
 
-        do {
-            String choice = Menu.prompt_menu();
+        while(true){
 
-            switch (choice.toUpperCase()) {
-                case "A":
-                    String input = Menu.prompt_file();
-                    book.readFromFile(input);
-                    System.out.println("File read successfully.");
-                    break;
-                case "B":
-                    AddressBookEntry entry = Menu.prompt_addition();
-                    book.add(entry);
-                    System.out.println("Address added to the Address Book.");
-                    break;
-                case "C":
-                    input = Menu.prompt_Removal();
-                    if (book.remove(input)) {
-                        System.out.println("Address removed successfully.");
-                    } else {
-                        System.out.println("Address not found.");
-                    }
-                    break;
-                case "D":
-                    input = Menu.prompt_Find();
-                    List<AddressBookEntry> list = book.find(input);
-                    if (list.isEmpty()) {
-                        System.out.println("No matching entries found.");
-                    } else {
-                        int counter = 1;
-                        for (AddressBookEntry e : list) {
-                            System.out.println(counter + ": " + e.toString());
-                            counter++;
-                        }
-                    }
-                    break;
-                case "E":
-                    book.list();
-                    break;
-                case "F":
-                    System.out.println("Goodbye!");
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
+            Menu.prompt_menu();
+            selection = scanner.nextLine();
+
+            // Perform actions based on user input
+            if("a".equals(selection)){
+                String file = scanner.nextLine();
+                address.readFromFile(file);
+
+            }else if("b".equals(selection)){
+                entry = Menu.prompt_addition();
+                address.add(entry);
+                System.out.println("Success! Address added...");
+            }else if("c".equals(selection)){
+                // Remove an address entry
+                System.out.print("Remove data in progress... Please type last name for remove: ");
+                String last_name = scanner.nextLine();
+                address.remove(last_name);
+
+            }else if("d".equals(selection)){
+                // Find address entries by last name
+                System.out.print("Search in progress... Please type last name to find:");
+                String last_name = scanner.nextLine();
+                address.find(last_name);
+            }else if("e".equals(selection)){
+                // List all address entries
+                address.list();
+
+            }else if("f".equals(selection)){
+                System.out.println("Exiting Application... Thank you for your time!");
+                return;
             }
-        } while (!choice.equalsIgnoreCase("F"));
-
-        scanner.close(); // Close Scanner to avoid resource leaks
-
+            else{
+                System.out.println("Please read the instructions carefully...");
+                break;
+            }
+        }
     }
 }

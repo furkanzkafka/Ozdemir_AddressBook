@@ -26,33 +26,32 @@ public class AddressBook {
     /**
      * Remove all the reocrds for a given Last Name.
      *
-     * @param lastName
+     * @param last_name
      */
-    public void remove(String lastName) {
+    public void remove(String last_name) {
 
         AddressBookEntry entry = null;
         int counter = 0;
-        while((entry = findAddress(lastName)) != null) {
+        while((entry = findAddress(last_name)) != null) {
             contacts.remove(entry);
             counter++;
         }
 
         if(counter == 0 ) {
-            System.out.println("No Address has been removed from AddressBook");
+            System.out.println("No address found!");
         } else {
-            System.out.printf("%n%d addressed has been removed from AddressBook%n", counter);
+            System.out.printf("Address has been removed");
         }
     }
 
     /**
      * Function to load AddressBook from a given File.
      *
-     * @param fileName
+     * @param file_name
      */
-    public void readFromFile(String fileName) {
+    public void readFromFile(String file_name) {
         try {
-
-            File file = new File(fileName);
+            File file = new File(file_name);
             Scanner reader = new Scanner(file);
             int counter = 0;
 
@@ -88,12 +87,12 @@ public class AddressBook {
     /**
      * Helper method to find Address Entry for a given last name.
      *
-     * @param lastName
+     * @param last_name
      * @return address entry
      */
-    private AddressBookEntry findAddress(String lastName) {
+    private AddressBookEntry findAddress(String last_name) {
         for(AddressBookEntry entry: contacts) {
-            if(entry.getLastName().equalsIgnoreCase(lastName)) {
+            if(entry.getLastName().equalsIgnoreCase(last_name)) {
                 return entry;
             }
         }
@@ -102,7 +101,7 @@ public class AddressBook {
     }
 
     /**
-     * Function to add new AddressEntry
+     * add new address
      *
      * @param entry
      */
@@ -111,7 +110,7 @@ public class AddressBook {
     }
 
     /**
-     * List all the Addressed in the AddressBook.
+     * List
      */
     public void list() {
 
@@ -127,17 +126,17 @@ public class AddressBook {
     }
 
     /**
-     * Function to Get the list of all the addresses that has last name starts with
-     * given prefix.
+     * finding
      *
-     * @param startOf_lastName
-     * @return list of addresses
+     *
+     * @param find_lastname
+     * @return list
      */
-    public LinkedList<AddressBookEntry> find(String startOf_lastName) {
+    public LinkedList<AddressBookEntry> find(String find_lastname) {
         LinkedList<AddressBookEntry> list = new LinkedList<>();
 
         for(AddressBookEntry address: contacts) {
-            if(address.getLastName().startsWith(startOf_lastName)) {
+            if(address.getLastName().startsWith(find_lastname)) {
                 list.add(address);
             }
         }
