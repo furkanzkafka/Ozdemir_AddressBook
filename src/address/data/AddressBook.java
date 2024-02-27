@@ -1,9 +1,7 @@
 package address.data;
 
 import java.io.FileNotFoundException;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.util.*;
 import java.io.File;
 
 /**
@@ -14,13 +12,17 @@ public class AddressBook {
 
     // Collection of addresses
     LinkedList<AddressBookEntry>contacts;
+    private final TreeMap<String, TreeSet<AddressBookEntry>> addressEntryList = new TreeMap<>();
+
 
     /**
      * Constructor to create an empty address book.
      */
     public AddressBook(){
+
         contacts = new LinkedList<AddressBookEntry>();
     }
+
 
     /**
      * Removes all contacts with a specific last name from the address book.
@@ -32,7 +34,7 @@ public class AddressBook {
 
         AddressBookEntry entry = null;
         int counter = 0;
-        while((entry = findAddress(last_name)) != null) {
+        while((entry = findtoRemove(last_name)) != null) {
             contacts.remove(entry);
             counter++;
         }
@@ -43,6 +45,20 @@ public class AddressBook {
         } else {
             System.out.printf("Address has been removed");
         }
+    }
+
+    /**
+     * Loads contacts from a file into the address book.
+     *
+     * @param last_name the name of the file to load contacts from
+     */
+    private AddressBookEntry findtoRemove(String last_name) {
+        for(AddressBookEntry entry: contacts) {
+            if(entry.getLastName().equalsIgnoreCase(last_name)) {
+                return entry;
+            }
+        }
+        return null;
     }
 
     /**
@@ -74,22 +90,6 @@ public class AddressBook {
         } catch (FileNotFoundException e) {
             System.err.println("File not found: " + file_name);
         }
-    }
-
-    /**
-     * Mthod to find a contact by last name.
-     *
-     * @param last_name the last name of the contact to find
-     * @return the contact with the specified last name, or null if not found
-     */
-    private AddressBookEntry findAddress(String last_name) {
-        for(AddressBookEntry entry: contacts) {
-            if(entry.getLastName().equalsIgnoreCase(last_name)) {
-                return entry;
-            }
-        }
-
-        return null;
     }
 
     /**
@@ -127,11 +127,23 @@ public class AddressBook {
      */
     public LinkedList<AddressBookEntry> find(String find_lastname) {
         LinkedList<AddressBookEntry> list = new LinkedList<>();
+        boolean found = false;
 
         // Loop through the contacts to find the ones with matching last names
         for(AddressBookEntry address: contacts) {
             if(address.getLastName().startsWith(find_lastname)) {
                 list.add(address);
+                found = true;
+            }
+        }
+        // Print a message if the address is not found
+        if (!found) {
+            System.out.println("No addresses found!");
+        } else {
+            // Print the first name if addresses are found
+            System.out.println("Success! This last name belongs to -> \"" + find_lastname + "\":");
+            for (AddressBookEntry address : list) {
+                System.out.println(address.getFirstName());
             }
         }
 

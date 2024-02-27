@@ -20,6 +20,7 @@
 package address.data;
 public class AddressBookEntry {
 
+    public int index;
     private String firstName;
     private String lastName;
     private String street;
