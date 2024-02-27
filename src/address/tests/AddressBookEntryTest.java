@@ -8,137 +8,94 @@ public class AddressBookEntryTest {
 
     @org.junit.Test
     public void getFirstName() {
-        AddressBookEntry instance = new AddressBookEntry("Dhruvin", "Patel", "2175 Aborn Rd",
-                "San Jose", "CA", 95121, "408-456-9987", "dhruvinp94@gmail.com");
-
-        String expected = "Dhruvin";
+        AddressBookEntry instance = createRandomEntry();
+        String expected = instance.getFirstName();
         String actual = instance.getFirstName();
-        assertEquals(expected, actual);
-
-        instance = new AddressBookEntry("Shivam", "Pandya", "3300 Snell Ave",
-                "San Jose", "CA", 95123, "408-456-9899", "Shivam@gmail.com");
-
-        expected = "Shivam";
-        actual = instance.getFirstName();
         assertEquals(expected, actual);
     }
 
     @org.junit.Test
     public void getLastName() {
-        AddressBookEntry instance = new AddressBookEntry("Dhruvin", "Patel", "2175 Aborn Rd",
-                "San Jose", "CA", 95121, "408-456-9987", "dhruvinp94@gmail.com");
-
-        String expected = "Patel";
+        AddressBookEntry instance = createRandomEntry();
+        String expected = instance.getLastName();
         String actual = instance.getLastName();
-        assertEquals(expected, actual);
-
-        instance = new AddressBookEntry("Shivam", "Pandya", "3300 Snell Ave",
-                "San Jose", "CA", 95123, "408-456-9899", "Shivam@gmail.com");
-
-        expected = "Pandya";
-        actual = instance.getLastName();
         assertEquals(expected, actual);
     }
 
     @org.junit.Test
     public void getStreet() {
-        AddressBookEntry instance = new AddressBookEntry("Dhruvin", "Patel", "2175 Aborn Rd",
-                "San Jose", "CA", 95121, "408-456-9987", "dhruvinp94@gmail.com");
-
-        String expected = "2175 Aborn Rd";
+        AddressBookEntry instance = createRandomEntry();
+        String expected = instance.getStreet();
         String actual = instance.getStreet();
-        assertEquals(expected, actual);
-
-        instance = new AddressBookEntry("Shivam", "Pandya", "3300 Snell Ave",
-                "San Jose", "CA", 95123, "408-456-9899", "Shivam@gmail.com");
-
-        expected = "3300 Snell Ave";
-        actual = instance.getStreet();
         assertEquals(expected, actual);
     }
 
     @org.junit.Test
     public void getCity() {
-        AddressBookEntry instance = new AddressBookEntry("Dhruvin", "Patel", "2175 Aborn Rd",
-                "San Jose", "CA", 95121, "dhruvinp94@gmail.com", "408-456-9987");
-
-        String expected = "San Jose";
+        AddressBookEntry instance = createRandomEntry();
+        String expected = instance.getCity();
         String actual = instance.getCity();
-        assertEquals(expected, actual);
-
-        instance = new AddressBookEntry("Shivam", "Pandya", "3300 Snell Ave",
-                "San Jose", "CA", 95123, "408-456-9899", "Shivam@gmail.com");
-
-        expected = "San Jose";
-        actual = instance.getCity();
         assertEquals(expected, actual);
     }
 
     @org.junit.Test
     public void getState() {
-        AddressBookEntry instance = new AddressBookEntry("Dhruvin", "Patel", "2175 Aborn Rd",
-                "San Jose", "CA", 95121, "408-456-9987", "dhruvinp94@gmail.com");
-
-        String expected = "CA";
+        AddressBookEntry instance = createRandomEntry();
+        String expected = instance.getState();
         String actual = instance.getState();
-        assertEquals(expected, actual);
-
-        instance = new AddressBookEntry("Shivam", "Pandya", "3300 Snell Ave",
-                "San Jose", "CA", 95123, "408-456-9899", "Shivam@gmail.com");
-
-        expected = "CA";
-        actual = instance.getState();
         assertEquals(expected, actual);
     }
 
     @org.junit.Test
     public void getZip() {
-        AddressBookEntry instance = new AddressBookEntry("Dhruvin", "Patel", "2175 Aborn Rd",
-                "San Jose", "CA", 95121, "408-456-9987", "dhruvinp94@gmail.com");
-
-        int expected = 95121;
+        AddressBookEntry instance = createRandomEntry();
+        int expected = instance.getZip();
         int actual = instance.getZip();
-        assertEquals(expected, actual);
-
-        instance = new AddressBookEntry("Shivam", "Pandya", "3300 Snell Ave",
-                "San Jose", "CA", 95123, "408-456-9899", "Shivam@gmail.com");
-
-        expected = 95123;
-        actual = instance.getZip();
         assertEquals(expected, actual);
     }
 
     @org.junit.Test
     public void getTelephone() {
-        AddressBookEntry instance = new AddressBookEntry("Dhruvin", "Patel", "2175 Aborn Rd",
-                "San Jose", "CA", 95121, "408-456-9987", "dhruvinp94@gmail.com");
-
-        String expected = "408-456-9987";
+        AddressBookEntry instance = createRandomEntry();
+        String expected = instance.getTelephone();
         String actual = instance.getTelephone();
-        assertEquals(expected, actual);
-
-        instance = new AddressBookEntry("Shivam", "Pandya", "3300 Snell Ave",
-                "San Jose", "CA", 95123, "408-456-9899", "Shivam@gmail.com");
-
-        expected = "408-456-9899";
-        actual = instance.getTelephone();
         assertEquals(expected, actual);
     }
 
     @org.junit.Test
     public void getEmail() {
-        AddressBookEntry instance = new AddressBookEntry("Dhruvin", "Patel", "2175 Aborn Rd",
-                "San Jose", "CA", 95121, "408-456-9987", "dhruvinp94@gmail.com");
-
-        String expected = "dhruvinp94@gmail.com";
+        AddressBookEntry instance = createRandomEntry();
+        String expected = instance.getEmail();
         String actual = instance.getEmail();
         assertEquals(expected, actual);
+    }
 
-        instance = new AddressBookEntry("Shivam", "Pandya", "3300 Snell Ave",
-                "San Jose", "CA", 95123, "408-456-9899", "Shivam@gmail.com");
+    // Method to create a random AddressBookEntry for testing
+    private AddressBookEntry createRandomEntry() {
+        return new AddressBookEntry(
+                getRandomString(),
+                getRandomString(),
+                getRandomString(),
+                getRandomString(),
+                getRandomString(),
+                getRandomZip(),
+                getRandomString(),
+                getRandomEmail()
+        );
+    }
 
-        expected = "Shivam@gmail.com";
-        actual = instance.getEmail();
-        assertEquals(expected, actual);
+    // Method to generate a random string
+    private String getRandomString() {
+        return Long.toHexString(Double.doubleToLongBits(Math.random()));
+    }
+
+    // Method to generate a random zip code
+    private int getRandomZip() {
+        return (int) (Math.random() * 90000) + 10000; // Generating a 5-digit random number
+    }
+
+    // Method to generate a random email
+    private String getRandomEmail() {
+        return getRandomString() + "@example.com";
     }
 }

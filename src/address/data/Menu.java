@@ -2,18 +2,14 @@ package address.data;
 
 import java.util.Scanner;
 
-/**
- * Class to interadct with the user thorugh Standard Keyboard.
- */
-
 public class Menu {
 
     private static Scanner keyboard = new Scanner(System.in);
 
     /**
-     * Function to display the Menu to the user and read the menu selection
+     * Displays the menu options and reads the user's selection.
      *
-     * @return selected menu
+     * @return the user's menu selection
      */
     public static String prompt_menu() {
 
@@ -35,10 +31,9 @@ public class Menu {
     }
 
     /**
-     * Function to prompt the user for the new AddressEntry and return newly
-     * created Address Entry
+     * Prompts the user to enter details for a new address entry.
      *
-     * @return new address entry to add
+     * @return the newly created address entry
      */
     public static AddressBookEntry prompt_addition() {
         AddressBookEntry entry = null;
@@ -62,9 +57,9 @@ public class Menu {
     }
 
     /**
-     * Function to Prompt and read start_of_last_name to search for the Addresses.
+     * Prompts the user to enter the last name or partial last name to find addresses.
      *
-     * @return start of last name
+     * @return the last name or partial last name to search for
      */
     public static String prompt_Find() {
         System.out.print("\nEnter in all or the beginning of the Last Name of the\n" +
@@ -74,9 +69,9 @@ public class Menu {
     }
 
     /**
-     * Function to prompt and read the file name.
+     * Prompts the user to enter the file name to load the address book from.
      *
-     * @return file name
+     * @return the file name to load the address book from
      */
     public static String prompt_file() {
         System.out.print("\nEnter the file name to load the Address Book:\n> ");
@@ -85,9 +80,9 @@ public class Menu {
     }
 
     /**
-     * Function to prompt for the last name to remove the address.
+     * Prompts the user to enter the last name to remove an address.
      *
-     * @return last name
+     * @return the last name of the address to remove
      */
     public static String prompt_Removal() {
         System.out.print("\nEnter the last name to remove AddressEntry:\n> ");

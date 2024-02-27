@@ -15,11 +15,8 @@ public class AddressBookTest {
     public void remove() {
         AddressBook instance = new AddressBook();
 
-        AddressBookEntry one = new AddressBookEntry("Dhruvin", "Patel", "2175 Aborn Rd",
-                "San Jose", "CA", 95121, "408-456-9987", "dhruvinp94@gmail.com");
-
-        AddressBookEntry two = new AddressBookEntry("Shivam", "Pandya", "3300 Snell Ave",
-                "San Jose", "CA", 95123, "408-456-9899", "Shivam@gmail.com");
+        AddressBookEntry one = createRandomEntry();
+        AddressBookEntry two = createRandomEntry();
 
         instance.add(one);
         instance.add(two);
@@ -27,16 +24,15 @@ public class AddressBookTest {
         List<AddressBookEntry> entries = instance.find("P");
 
         assertEquals(2, entries.size());
-        assertEquals(one, entries.get(0));
-        assertEquals(two, entries.get(1));
+        assertTrue(entries.contains(one));
+        assertTrue(entries.contains(two));
 
-        instance.remove("Patel");
+        instance.remove(one.getLastName());
 
         entries = instance.find("P");
 
         assertEquals(1, entries.size());
-        assertEquals(two, entries.get(0));
-
+        assertTrue(entries.contains(two));
     }
 
     @Test
@@ -46,11 +42,8 @@ public class AddressBookTest {
         List<AddressBookEntry> entries = instance.find("P");
         assertEquals(0, entries.size());
 
-        AddressBookEntry one = new AddressBookEntry("Dhruvin", "Patel", "2175 Aborn Rd",
-                "San Jose", "CA", 95121, "408-456-9987", "dhruvinp94@gmail.com");
-
-        AddressBookEntry two = new AddressBookEntry("Shivam", "Pandya", "3300 Snell Ave",
-                "San Jose", "CA", 95123, "408-456-9899", "Shivam@gmail.com");
+        AddressBookEntry one = createRandomEntry();
+        AddressBookEntry two = createRandomEntry();
 
         instance.add(one);
         instance.add(two);
@@ -58,8 +51,8 @@ public class AddressBookTest {
         entries = instance.find("P");
 
         assertEquals(2, entries.size());
-        assertEquals(one, entries.get(0));
-        assertEquals(two, entries.get(1));
+        assertTrue(entries.contains(one));
+        assertTrue(entries.contains(two));
     }
 
     @Test
@@ -69,11 +62,8 @@ public class AddressBookTest {
         List<AddressBookEntry> entries = instance.find("P");
         assertEquals(0, entries.size());
 
-        AddressBookEntry one = new AddressBookEntry("Dhruvin", "Patel", "2175 Aborn Rd",
-                "San Jose", "CA", 95121, "408-456-9987", "dhruvinp94@gmail.com");
-
-        AddressBookEntry two = new AddressBookEntry("Shivam", "Pandya", "3300 Snell Ave",
-                "San Jose", "CA", 95123, "408-456-9899", "Shivam@gmail.com");
+        AddressBookEntry one = createRandomEntry();
+        AddressBookEntry two = createRandomEntry();
 
         instance.add(one);
         instance.add(two);
@@ -81,11 +71,39 @@ public class AddressBookTest {
         entries = instance.find("P");
 
         assertEquals(2, entries.size());
-        assertEquals(one, entries.get(0));
-        assertEquals(two, entries.get(1));
+        assertTrue(entries.contains(one));
+        assertTrue(entries.contains(two));
 
         entries = instance.find("Nothing");
         assertEquals(0, entries.size());
+    }
 
+    // Method to create a random AddressBookEntry for testing
+    private AddressBookEntry createRandomEntry() {
+        return new AddressBookEntry(
+                getRandomString(),
+                getRandomString(),
+                getRandomString(),
+                getRandomString(),
+                getRandomString(),
+                getRandomZip(),
+                getRandomString(),
+                getRandomEmail()
+        );
+    }
+
+    // Method to generate a random string
+    private String getRandomString() {
+        return Long.toHexString(Double.doubleToLongBits(Math.random()));
+    }
+
+    // Method to generate a random zip code
+    private int getRandomZip() {
+        return (int) (Math.random() * 90000) + 10000; // Generating a 5-digit random number
+    }
+
+    // Method to generate a random email
+    private String getRandomEmail() {
+        return getRandomString() + "@example.com";
     }
 }

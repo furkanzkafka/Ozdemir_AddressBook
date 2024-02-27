@@ -1,15 +1,14 @@
 package address.data;
 
+import java.io.FileNotFoundException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.io.File;
 
 /**
- *
- * Class to represent an AddressBook that is a collection of addressEntry objects.
- *
- * Provides methods to manipulate the AddressBook Collection.
+ * Represents an address book containing a collection of AddressBookEntry objects.
+ * Provides methods to manipulate the AddressBook collection.
  */
 public class AddressBook {
 
@@ -17,18 +16,19 @@ public class AddressBook {
     LinkedList<AddressBookEntry>contacts;
 
     /**
-     * Constructor to setup empty AddressBook.
+     * Constructor to create an empty address book.
      */
     public AddressBook(){
         contacts = new LinkedList<AddressBookEntry>();
     }
 
     /**
-     * Remove all the reocrds for a given Last Name.
+     * Removes all contacts with a specific last name from the address book.
      *
-     * @param last_name
+     * @param last_name the last name of the contacts to be removed
      */
     public void remove(String last_name) {
+        // Loop through the contacts to find and remove all matching contacts
 
         AddressBookEntry entry = null;
         int counter = 0;
@@ -37,6 +37,7 @@ public class AddressBook {
             counter++;
         }
 
+        // Print a message based on whether any contacts were removed or not
         if(counter == 0 ) {
             System.out.println("No address found!");
         } else {
@@ -45,18 +46,15 @@ public class AddressBook {
     }
 
     /**
-     * Function to load AddressBook from a given File.
+     * Loads contacts from a file into the address book.
      *
-     * @param file_name
+     * @param file_name the name of the file to load contacts from
      */
     public void readFromFile(String file_name) {
-        try {
-            File file = new File(file_name);
-            Scanner reader = new Scanner(file);
+        try (Scanner reader = new Scanner(new File(file_name))) {
             int counter = 0;
 
-            while(reader.hasNextLine()) {
-
+            while (reader.hasNextLine()) {
                 String firstName = reader.nextLine();
                 String lastName = reader.nextLine();
                 String street = reader.nextLine();
@@ -72,23 +70,17 @@ public class AddressBook {
                 this.contacts.add(entry);
                 counter++;
             }
-
-            // close file
-            reader.close();
-
-            System.out.printf("%nRead in %d new Addresses, successfully loaded, currently %d addressed%n",
-                    counter, contacts.size());
-
-        } catch(Exception e) {
-            e.printStackTrace();
+            System.out.printf("Success! Loaded %d addresses. Total: %d%n", counter, contacts.size());
+        } catch (FileNotFoundException e) {
+            System.err.println("File not found: " + file_name);
         }
     }
 
     /**
-     * Helper method to find Address Entry for a given last name.
+     * Mthod to find a contact by last name.
      *
-     * @param last_name
-     * @return address entry
+     * @param last_name the last name of the contact to find
+     * @return the contact with the specified last name, or null if not found
      */
     private AddressBookEntry findAddress(String last_name) {
         for(AddressBookEntry entry: contacts) {
@@ -101,16 +93,17 @@ public class AddressBook {
     }
 
     /**
-     * add new address
+     * Adds a new contact to the address book.
      *
-     * @param entry
+     * @param entry the contact to add
      */
     public void add(AddressBookEntry entry) {
         contacts.addLast(entry);
     }
 
+
     /**
-     * List
+     * Lists all contacts in the address book sorted by last name.
      */
     public void list() {
 
@@ -125,22 +118,23 @@ public class AddressBook {
         }
     }
 
+
     /**
-     * finding
+     * Finds contacts by last name or partial last name.
      *
-     *
-     * @param find_lastname
-     * @return list
+     * @param find_lastname the last name or partial last name to search for
+     * @return a list of contacts matching the search criteria
      */
     public LinkedList<AddressBookEntry> find(String find_lastname) {
         LinkedList<AddressBookEntry> list = new LinkedList<>();
 
+        // Loop through the contacts to find the ones with matching last names
         for(AddressBookEntry address: contacts) {
             if(address.getLastName().startsWith(find_lastname)) {
                 list.add(address);
             }
         }
 
-        return list;
+        return list; // Return the list of matching contacts
     }
 }
